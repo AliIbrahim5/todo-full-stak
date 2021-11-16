@@ -12,7 +12,7 @@ app.use(express.json());
 
 // step by step  one get == read
 app.get("/read",(req, res, ) =>{
-    fs.readFile('./todo.json',(ree,data)=>{
+    fs.readFile('./todo.json',(err,data)=>{
         const read=JSON.parse(data.toString())
         res.status(200).json(read)
     })
@@ -29,7 +29,18 @@ function addtodo(read){
 }
 
 
-// step by step
+
+/// get creat 
+app.post("/addtotodo",(req,res)=>{
+    const {name} =req.body
+    fs.readFile('./todo.json',(err,data)=>{
+        const newtodo =JSON.parse(data.toString());
+        newtodo.push({id:newtodo.length +1, name,isdelet:false,isupdeat: false})
+        addtodo(newtodo);
+        res.status(200).json(newtodo);    
+    })
+})
+
 
 
 
