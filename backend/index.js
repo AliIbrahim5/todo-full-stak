@@ -19,8 +19,25 @@ app.get("/read",(req, res, ) =>{
 
 })
 
+// step by step   writeFile
+
+
+function addtodo(read){
+    fs.writeFile('./todo.json',JSON.stringify(read),()=>{
+        console.log('done add to todo');
+    })
+}
+
+
+// step by step
+
+
+
 
 
 app.listen(PROT,()=>{
  console.log(`SERAVAR IS ON ${PROT}`);
 });
+
+
+
