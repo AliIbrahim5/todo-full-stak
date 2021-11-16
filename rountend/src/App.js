@@ -24,7 +24,10 @@ const BACKEND_URL = "http://localhost:5000/read";
       <ul>{todo.map((item)=>{
 return(
 <>
-<li>{item.name}</li>
+<li>{
+item.name}
+</li>
+<h1>{item.id}</h1>
 </>
 )
       })}</ul>
